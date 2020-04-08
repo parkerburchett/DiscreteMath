@@ -1,0 +1,10 @@
+Greatest Common Denominaotr
+
+Least common facotor
+
+for Integers A and B
+
+1. rewrite A and B as products of prime factors
+
+2. gcd = product of all common prime facotors
+ 3. lcf = prodcut of prime facotrs counted a single time. eg dont' count the first 2 more than once 
