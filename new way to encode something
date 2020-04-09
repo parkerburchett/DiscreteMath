@@ -1,0 +1,10 @@
+Cool idea
+
+Write a script to equalize the distrbution of letters in a message
+
+the put them randomingly interspeced (every 12 lettters for example) into a new file. That is the message.
+
+that way it looks random.
+
+There are 2 keys the fuction that shows what characters matter. The function that decodes the hidden message
+
