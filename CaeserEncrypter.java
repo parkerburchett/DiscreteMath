@@ -21,6 +21,7 @@ public class CaeserEncrypter
       for(int n =0; n<26; n++)
       {
          String[] curAr = f.nextLine().split(",");
+         standardAlphabet[n] = new Encoder(curAr[0].trim(), curAr[1].trim(), curAr[2].trim());
       }
       return standardAlphabet;
    }
@@ -41,7 +42,8 @@ public class CaeserEncrypter
    {
    // create new blank file called toNumbers
    
-   // walk thorugh every character in rawFile
+   // walk thorugh every character in rawFile. 
+   // convert every character to another character in it to a 2 letter pair 
    }
 }
 
