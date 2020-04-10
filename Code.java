@@ -10,7 +10,7 @@ public class Code
    public String getNumber(String letter) // untested. Should return the assocated number or the character or the character. eg "A" becomes "00" and "," becomes ","
    {
       if (letter.length() != 1)
-         throw new IllegalArgumentException("you are passing in a letter that is more than one character. That String is" + letter);
+         return letter;
       else
       {
          for(int n =0; n<26 ; n++)

@@ -1,18 +1,19 @@
 import java.util.Scanner;
 import java.io.File;
-
+import java.io.IOException;
+import java.io.FileWriter;
 
 public class CaeserEncrypter
 {
    public static void main(String[] args) throws Exception
    {
-      File file = new File("numberedAlphabet.txt");
+      File alphabet = new File("numberedAlphabet.txt");
 
-      Encoder[] standardAlphabet = codeMaker(file);
-      for(Encoder e : standardAlphabet)
-      {
-         System.out.println(e);
-      }
+      Encoder[] standardAlphabet = codeMaker(alphabet);     
+      Code standardCode = new Code(standardAlphabet);
+      
+      File copiedRaw = new File("Invictus");
+      rawToNumbers(copiedRaw, standardCode);
    }
    public static Encoder[] codeMaker(File file) throws Exception // works
    {
@@ -30,20 +31,64 @@ public class CaeserEncrypter
    {
       String firstNum = code[0].number; 
       for(int n = 0; n< 26 ; n++)
-      {
          code[n].number = code[(n+1)%26].number;
-         //System.out.println(code[n]);
-      }
       code[25].number = firstNum;
       return code;
    }
    
-   public void rawToNumbers(File rawFile, Code code) throws Exception
+   public static void rawToNumbers(File rawFile, Code code) throws Exception
    {
-   // create new blank file called toNumbers
-   
-   // walk thorugh every character in rawFile. 
-   // convert every character to another character in it to a 2 letter pair 
+      File toNumbers = new File("toNumbers.txt");  
+      try // this is copy pasted from https://www.w3schools.com/java/showjava.asp?filename=demo_files_create
+      {  
+      if (toNumbers.createNewFile()) 
+        System.out.println("File created: " + toNumbers.getName());  
+      else  
+        System.out.println("File already exists.");  
+      } 
+      catch (IOException e) 
+      {
+        System.out.println("An error occurred.");
+        e.printStackTrace(); 
+      }
+     
+      Scanner rawScanner = new Scanner(rawFile);
+      try 
+      {
+         FileWriter toNumbersWriter = new FileWriter("toNumbers.txt");
+         if (toNumbers.exists())
+         {
+            toNumbers.delete();
+            try 
+            {
+		         toNumbers.createNewFile();
+	         } 
+            catch (IOException e) 
+            {
+		      e.printStackTrace();
+	         }
+         }
+         while(rawScanner.hasNextLine())
+         {
+            String curLine = rawScanner.nextLine();
+            String[] curLineAsAr = curLine.split("");
+            
+            for(int n =0; n<curLineAsAr.length; n++)
+            {
+               toNumbersWriter.write(code.getNumber(curLineAsAr[n]));
+            }
+            toNumbersWriter.write("\n");
+         }
+         
+         toNumbersWriter.close();
+      } 
+      catch (IOException e) 
+      {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+      }
+      
+      
    }
 }
 
