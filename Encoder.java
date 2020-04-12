@@ -10,6 +10,12 @@ public class Encoder
       this.upperCase = upper;
       this.number = num;
    }
+   public Encoder(Encoder a) // this is used in the default constructor 
+   {
+      this.lowerCase = a.lowerCase;
+      this.upperCase = a.upperCase;
+      this.number = a.number;   
+   }
    @Override
    public String toString()
    {

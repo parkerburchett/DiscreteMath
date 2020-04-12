@@ -3,16 +3,16 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
 
-public class CaeserEncrypter
+public class Tester
 {
    public static void main(String[] args) throws Exception
    {
       File alphabet = new File("numberedAlphabet.txt");
-      File inputFile= new File("Invictus");
+      File inputFile= new File("problem2.txt");
       
       Code code = new Code(alphabet);
-      EncryptionFactory factory = new EncryptionFactory(code);
-      
+      EncryptionFactory fact = new EncryptionFactory(code);
+      File toNumbers = fact.convertToNumbers(inputFile, code);  
    }
    
 }
