@@ -11,8 +11,9 @@ public class EncryptionFactory
    
    public EncryptionFactory(Code code){ this.code =code; }
    
-   public File convertToNumbers(File rawFile, Code code) throws Exception
+   public File convertToNumbers(File rawFile) throws Exception
    {
+      this.code = code;
       Scanner rawScanner = new Scanner(rawFile);
       File toNumbers = new File("toNumbers.txt");  
       try 

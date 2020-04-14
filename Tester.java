@@ -11,8 +11,15 @@ public class Tester
       File inputFile= new File("problem2.txt");
       
       Code code = new Code(alphabet);
-      EncryptionFactory fact = new EncryptionFactory(code);
-      File toNumbers = fact.convertToNumbers(inputFile, code);  
+      EncryptionFactory Efact = new EncryptionFactory(code);
+      DecryptionFactory Dfact = new DecryptionFactory(code);
+      File toNumbers = Efact.convertToNumbers(inputFile);  
+      File toLetters = Dfact.convertToLetters(toNumbers);
+      // everything above this works.
+      File endFile = Dfact.completeToletters(inputFile, toLetters, toNumbers, code, Efact, Dfact);
+      
+      
+      System.out.println("end");
    }
    
 }

@@ -49,7 +49,7 @@ public class Code
       converter[25].number = firstNum;
    }
    
-   public void restoreOriginal()
+   public void restoreOriginal()// not used
    {
      for(int n =0; n<26; n++)
       {
@@ -68,5 +68,5 @@ public class Code
                return converter[n].upperCase;
       }
       return null;
-   } 
+   }
 }
