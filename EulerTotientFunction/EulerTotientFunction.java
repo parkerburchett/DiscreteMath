@@ -5,7 +5,7 @@ public class EulerTotientFunction
    {
       for(int i = 0; i< 1000; i++)
       {
-         System.out.println(Integer.toString(i) + "," +Integer.toString(phi(i)));
+         System.out.println(Integer.toString(i) + "," + Integer.toString(phi(i)));
       }
    }
    

@@ -1,0 +1,30 @@
+TimeCompletity of my version of the toitent function
+
+
+for E(0,n) gets the toit for every int below.
+
+requires 
+
+time cost
+E(n)
+
+do n gcd(k) calls where k = all integers between 0 and n.
+
+E(n) = gcd(1,n) + gcd(2,n) + ... gcd(n-1,n) + gcdn(n,n)
+
+
+time cost of gcd(a,b)
+
+min(a | b) * constant time operations. 
+
+therefore gcd(1) is a single constant time operation
+
+THEREFORE
+
+E(n) = gcd(1,n) + gcd(2,n) + ... gcd(n-1,n) + gcdn(n,n)
+
+
+E(n) = 1C + 2C + ... N-1*C + NC
+
+
+I am not certain of this but i think the time compleity is n^2 or n^n
