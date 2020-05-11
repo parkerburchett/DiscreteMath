@@ -1,3 +1,4 @@
+// This is to help visualize swaping letters in a substition cipher
 import java.util.Scanner;
 import java.io.File;
 
