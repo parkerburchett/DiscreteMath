@@ -8,7 +8,7 @@ public class CeaserSolver
    public static void main(String[] args) throws Exception
    {
       File alphabet = new File("numberedAlphabet.txt");
-      File inputFile= new File("prog4.txt");
+      File inputFile= new File("FinalCaeser.txt");
       
       Code code = new Code(alphabet);
       EncryptionFactory Efact = new EncryptionFactory(code);
